@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="styles/site.css"> -->
+    <style>
+        h2{
+            color:blue;
+            background-color: lightcyan;
+            width:50%;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="myH">aaaaaaaaaaa</h2>
+    <!--引用JavaScript檔案-->
+    <!-- <script src="scripts/site.js"></script> -->
+    <script>
+        //JS程式碼寫在這裡
+        //資料輸入
+        //1. prompt("請輸入年紀","預設值")
+        //2. HTML Form(表單)
+        //資料輸出
+        //1. console.log(資料) 測試用
+        //2. document.write(資料) 不常用
+        //3. alert(資料) 提示用
+        //4. <div>資料</div>
+        //console.log("abc");
+
+        //step1 想要控制哪個標籤，就要先找到那個標籤
+        //DOM
+        //theH 是一常數
+        const theH = document.getElementById("myH");
+        //step3 改變內容? 
+        //文字 textContent(innerText)
+        //帶有標籤的文字 innerHTML
+        theH.innerHTML = "<u>abcd</u>";
+        //改變樣式? theH.style.[css樣式]=[css樣式的值]
+        theH.style.color = "green";
+        theH.style.backgroundColor = "lightgreen";
+
+        //滑鼠移到H2的標籤上 mouseover 事件
+        //step2 事件監聽
+        //theH.addEventListener("事件類型","事件發生要執行的程式碼")
+        theH.addEventListener("mouseover",function(){
+            theH.style.backgroundColor = "pink";
+            theH.textContent="滑鼠移入"
+        })   
+        //滑鼠移出H2的標籤上 mouseout 事件
+        theH.addEventListener("mouseout",function(){
+            theH.style.backgroundColor = "lightgreen";
+            theH.textContent="滑鼠移出"
+        })     
+          
+        
+        
+    </script>
+</body>
+</html>
