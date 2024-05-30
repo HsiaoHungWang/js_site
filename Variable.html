@@ -8,11 +8,14 @@
 <body>
     <label>請輸入美金：<input type="number" id="inputNumber"></label>
     <div id="div1"></div>
-
+    <label>請輸入半徑：<input type="number" id="inputR"></label>
+    <div id="div2"></div>
     <script>
         //step1 找到要控制的元素
         const inpNumber = document.getElementById('inputNumber');
         const divTWD = document.getElementById('div1');
+        const inpR = document.getElementById('inputR');
+        const div2 = document.getElementById('div2');
     
         //step2 在甚麼事情發生的時候 blur    
         inpNumber.addEventListener('blur',function(){
@@ -21,6 +24,14 @@
             let usd = inpNumber.value;
             //divTWD.textContent = '美金' + usd + ' * 匯率' + RATE + '=台幣' + usd * RATE;
             divTWD.textContent = `美金${usd} * 匯率${RATE} = 台幣${usd * RATE}`;
+        })
+
+        inpR.addEventListener('blur',function(){
+            //step3 做甚麼事:計算圓周率            
+            const PI = 3.14159; 
+            let r = inpR.value; //半徑
+            //divTWD.textContent = '美金' + usd + ' * 匯率' + RATE + '=台幣' + usd * RATE;
+            div2.textContent = `圓周長：${2 * PI * r}`;
         })
         
 
