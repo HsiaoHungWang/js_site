@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/site.css" />
+    <style></style>
+  
+  </head>
+  <body>
+    <h1 id="abc">Element 元素</h1>
+    <input type="text" id="inputName" placeholder="請輸入姓名"/>
+    <input type="text" id="inputAge"/>
+    <div id="div1"></div>
+
+    <script src="scripts/site.js"></script>
+    <script>
+        //這是註解
+        // window.alert('Hello JavaScript!!');
+        // alert('Hello JavaScript!!');
+        // console.log("Hello JS!!");
+        // document.write("Hello document!!")
+        // document.getElementById('abc').textContent = "getElementById()";
+        // var、let、const
+        // const myDiv = document.getElementById("div1");
+        // console.log(myDiv);  //null
+        // // myDiv.textContent = "<h2>Hello World!!</h2>";
+        // myDiv.innerHTML = "<h2>Hello World!!</h2>";
+       // window.prompt("請輸入姓名：","guest");
+    //    //輸入
+    //     const name = window.prompt("請輸入姓名：");
+    //     //輸出
+    //     console.log(name);
+    //     alert(name);
+    //step1 找到要控制的對象(Element)
+      const myDiv = document.getElementById("div1");
+      const inpName = document.getElementById("inputName");
+      //step2 甚麼事情發生的時候(Event)
+      inpName.addEventListener('input',function(){
+         //step3 做甚麼事
+        myDiv.textContent = inpName.value;
+      })
+     
+
+
+    //     myDiv.innerHTML = "<h2>Hello " + name + "</h2>";
+      </script>
+  </body>
+</html>
