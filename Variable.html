@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>請輸入美金：<input type="number" id="inputNumber"></label>
+    <div id="div1"></div>
+
+    <script>
+        //step1 找到要控制的元素
+        const inpNumber = document.getElementById('inputNumber');
+        const divTWD = document.getElementById('div1');
+    
+        //step2 在甚麼事情發生的時候 blur    
+        inpNumber.addEventListener('blur',function(){
+            //step3 做甚麼事
+            const RATE = 30;
+            let usd = inpNumber.value;
+            //divTWD.textContent = '美金' + usd + ' * 匯率' + RATE + '=台幣' + usd * RATE;
+            divTWD.textContent = `美金${usd} * 匯率${RATE} = 台幣${usd * RATE}`;
+        })
+        
+
+
+
+        //let 宣告的變數不能重複宣告
+        // let cost = 100;
+        // let Cost = 10000;
+        // let cost = 1000;
+        // console.log(cost);
+        // console.log(Cost);
+    </script>
+</body>
+</html>
