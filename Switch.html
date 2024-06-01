@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="myH"></h2>
+    <script>
+        const theH = document.getElementById('myH');
+
+        const today = new Date(); //JavaScript 提供的內建物件，用來得到程式執行時的日期及時間
+        //console.log(today);
+        const theDay = today.getDay(); //星期? 0-6 0=>日、6=>六
+        let aDay = "";
+        // if(theDay === 6){
+        //     aDay = "六"
+        // }else if(theDay === 1){
+        //     aDay = "一"
+        // }
+        switch(theDay){
+          case 0:
+            aDay = "日";
+            break;
+          case 6:
+            aDay = "六";
+            break;
+          default:
+            aDay = "不知"
+        }
+
+        theH.textContent = `今天是星期${aDay}`;
+
+    </script>
+</body>
+</html>
