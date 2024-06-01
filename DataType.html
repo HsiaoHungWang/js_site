@@ -22,22 +22,65 @@
       // console.log('abc\bdef');
 
       // //陣列 Array
-      // const balls = ["basketball","valleyball","baseball"];
+      const balls = ["basketball", "valleyball", "baseball"];
       // console.log(balls[0]);
       // console.log(balls[2]);
+
+      //陣列的解構賦值
+      //   const [b1,b2] = balls;
+      //   console.log(b1); //basketball
+      //   console.log(b2); //valleyball
 
       // //物件 Object
       // const product = {"productId":1,"productName":"iPhone","price":30000,"qty":10}
       // console.log(product.price);
       // console.log(product["productName"]);
 
-      const products = [
-        { productId: 1, productName: "iPhone1", price: 30000, qty: 10 },
-        { productId: 2, productName: "iPhone2", price: 28000, qty: 6 },
-        { productId: 3, productName: "iPhone3", price: 21000, qty: 8 },
-      ];
-      //讀出第二商品的價格
-      //讀出第三個商品的數量
+      //   //JSON
+      //   const products = [
+      //     { productId: 1, productName: "iPhone1", price: 30000, qty: 10 },
+      //     { productId: 2, productName: "iPhone2", price: 28000, qty: 6 },
+      //     { productId: 3, productName: "iPhone3", price: 21000, qty: 8 },
+      //   ];
+      //   //   //讀出第二商品的價格
+      //   //   console.log(products[1].price)
+      //   //   //讀出第三個商品的數量
+      //   //   console.log(products[2]["qty"])
+
+      //   //物件的解構賦值
+      //   const { productName,qty } = products[1];
+      //   console.log(productName);
+      //   console.log(qty);
+
+      //typeof 運算子
+    //   let a;
+    //   console.log(a); //undefined
+    //   console.log(typeof a); //undefined
+    //   // console.log(b); //ReferenceError: b is not defined
+    //   a = 12;
+    //   console.log(typeof a); //number
+    //   a = "12";
+    //   console.log(typeof a); //string
+    //      let b = 10;
+    //      console.log(Number(a) + b);
+    //      console.log(parseInt(a) + b);
+    //      console.log(+a + b);
+    //   a = true;
+    //   console.log(typeof a); //boolean
+    //   a = [];
+    //   console.log(typeof a); //object
+    //   a = {};
+    //   console.log(typeof a); //object
+
+    //轉成Boolean會是False的值：0、""、null、undefined
+    const x = "abc";
+    console.log(Boolean(x));  //true or false
+    console.log(Boolean(0));  //false
+    console.log(Boolean(""));  //false
+    console.log(Boolean(null));  //false
+    console.log(Boolean(undefined));  //false
+    console.log(Boolean("0"));  //true    
+    console.log(Boolean([]));  //true
     </script>
   </body>
 </html>
