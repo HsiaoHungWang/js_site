@@ -44,8 +44,23 @@
         const w = inpWeight.value;
         //const BMI = w / (h * h);
         const BMI = w / (h ** 2);
+
+        let message = "";
+        if(BMI < 18.5){
+          message = "過輕";
+        }else if(BMI >= 18.5 && BMI < 24){          
+          message = "正常";
+        }else if(BMI >= 24 && BMI < 27){          
+          message = "過重";
+        }else if(BMI >= 27 && BMI < 30){          
+          message = "輕度肥胖";
+        }else if(BMI >= 30 && BMI < 35){          
+          message = "中度肥胖";
+        }else{
+          message = "重度肥胖"
+        }
         //textContent(innerText)、innerHTML
-        divResult.textContent = `您的 BMI 是 ${BMI}`;
+        divResult.textContent = `您的 BMI 是 ${BMI}，${message}`;
 
       })
       
