@@ -40,10 +40,10 @@
       //事件類型：click、blur、input...
       btnClick.addEventListener('click',function(){
         //step3 做甚麼事
-        const h = inpHeight.value / 100;
+        const h = inpHeight.value / 100;       
         const w = inpWeight.value;
         const BMI = w / (h * h);
-        
+      
         //textContent(innerText)、innerHTML
         divResult.textContent = `您的 BMI 是 ${BMI}`;
 
