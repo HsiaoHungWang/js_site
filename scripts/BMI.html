@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-hant-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        div{
-            margin:10px;
-        }
+      div {
+        margin: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!--
         1. 做出HTML的網頁
         2. 樣式美化網頁
     -->
     <div>
-        <label>體重：<input type="text" placeholder="請輸入體重(公斤)"></label>
+      <label>體重：<input type="text" id="inputWeight" placeholder="請輸入體重(公斤)" /></label>
     </div>
-  <div>
-   <label>身高：<input type="text" placeholder="請輸入身高(公分)"></label>
-   </div>
-   <div>
-    <button>計算BMI</button>
-   </div>
-   <div>
-    您的BMI是...
-   </div>
+    <div>
+      <label>身高：<input type="text" id="inputHeight" placeholder="請輸入身高(公分)" /></label>
+    </div>
+    <div>
+      <button id="buttonClick">計算BMI</button>
+    </div>
+    <div id="divResult">您的BMI是...</div>
 
-   <script>
-    //按下按鈕 click 取得使用者的體重、身高=>計算出BMI
-   </script>
-</body>
+    <script>
+      //按下按鈕 click 取得使用者的體重、身高=>計算出BMI
+
+      //step1 找到要控制的對象
+      const inpWeight = document.getElementById('inputWeight');
+      const inpHeight = document.getElementById('inputHeight');
+      const btnClick = document.getElementById('buttonClick');
+      const divResult = document.getElementById('divResult');
+
+      //step2 在甚麼時候
+      btnClick.addEventListener('click',function(){
+        //step3 做甚麼事
+        
+      })
+      
+    </script>
+  </body>
 </html>
