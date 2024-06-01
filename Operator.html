@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let a = 10;
+      //  // const b = 10 * a++; //a++ => a = a + 1
+      //  //const b = a++ * 10;
+      //  const b = 10 * ++a; //a = a +  先做
+      //   console.log(a);  //11
+      //   console.log(b); //110?  100(正確)
+      //執行流程是 s
+      //step1 10 * a
+      //step2 10 * a 指定給 b
+      //step3 a =  a + 1
+
+      //   //使用者輸入數字都是字串型態，所以相加之前要先轉型
+      //   const a = Number(prompt("請輸入數字1"));
+      //   const b = prompt("請輸入數字2");
+      //   console.log(typeof a);
+      //   console.log(typeof b);
+      //   console.log(a + +b);
+
+      //小數運算會有不精確的問題
+      // console.log(0.1 + 0.1 + 0.1); //0.30000000000000004
+      // console.log(0.2 * 3); //0.6000000000000001
+      //可以透過https://mikemcl.github.io/bignumber.js/
+      //轉成整數，算完再轉成小數
+      // console.log(((0.2 * 10)*3)/10);
+
+      // =   指定
+      // ==  寬鬆比較
+      // === 嚴格比較
+
+      //邏輯運算子
+      //   console.log(!(2 > 1)); //false
+      //   console.log(Boolean(NaN));
+      //   console.log(!"");  // "" > !False > True
+      //   console.log(!!"");  // "" > !False > !True > False
+
+      //   const 有錢 = true;
+      //   const 夠帥 = false;
+      //   //交友兩個條件都有滿足
+      //   console.log(有錢 && 夠帥)
+      //   //交友兩個條件滿足一個
+      //   console.log(有錢 || 夠帥)
+
+      // let account = "Tom@gmail.com";
+      // let password = "12345678";
+      // account === "來自資料庫帳號一樣" && password === "來自資料庫密碼一樣"
+
+      //Shortcut(捷徑) 運算
+      //&& 兩邊都為 true => true 用來檢查資料是否存在
+      // console.log(false && ???);  //&&後面的程式碼完全不需要執行，結果就是 false
+      // console.log(true && ???);  //&&後面的程式碼要被執行，才會知道做後的結果為 true 還是 false
+
+      //  const employee = {"name":"Jack","email":"Jack@gmail.com","contact":{"cell":"0911222333","office":"02-11122233"}}
+      //    // const employee = {"name":"Mary","email":"Mary@gmail.com"}
+      //     console.log(employee.name);
+      //     console.log(employee.email);
+      //    // console.log(employee.contact.cell);   //TypeError: Cannot read properties of undefined (reading 'cell')
+      //     console.log(employee.contact && employee.contact.cell); //undefined
+
+      //|| 兩邊都為 false => false 用來給予預設值
+      //false || ???  ||後面的程式碼會被執行
+      //true || ??? => true ||後面的程式碼不需要被執行，結果就一定是true
+
+      let name = "Mary";
+      console.log(name || "guest");
+    </script>
+  </body>
+</html>
