@@ -10,10 +10,30 @@
     <script>
         //列出1到1000，不能被2整除也不能被3整除的數字
         //for(初始值;條件式;更新初始值)
-        for(let i = 1; i <= 1000; i++){
-             if(i % 2 !== 0 && i % 3 !== 0){
-                console.log(i); //不能被3整除的奇數
-             }
+        // for(let i = 1; i <= 1000; i++){
+        //      if(i % 2 !== 0 && i % 3 !== 0){
+        //         console.log(i); //不能被3整除的奇數
+        //      }
+        // }
+
+        //while
+        //印出偶數範例
+        let i = 0;
+        while(i <= 10){
+            i++; //i = i + 1
+            if(i % 2 !== 0){
+              continue;  //奇數  //不繼續往下執行
+            }
+            console.log(i);
+        }
+
+        while(true){
+            let text = prompt("輸入 quit 離開迴圈","quit");
+            if(text === "quit"){
+                console.log("離開迴圈")
+                break;  //離開迴圈
+            }
+            console.log(text);
         }
     </script>
 </body>
