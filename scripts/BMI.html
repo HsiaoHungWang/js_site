@@ -16,7 +16,7 @@
         2. 樣式美化網頁
     -->
     <div>
-      <label>體重：<input type="text" id="inputWeight" placeholder="請輸入體重(公斤)" /></label>
+      <label>體重：<input type="text"  id="inputWeight" placeholder="請輸入體重(公斤)" /></label>
     </div>
     <div>
       <label>身高：<input type="text" id="inputHeight" placeholder="請輸入身高(公分)" /></label>
@@ -24,7 +24,7 @@
     <div>
       <button id="buttonClick">計算BMI</button>
     </div>
-    <div id="divResult">您的BMI是...</div>
+    <div id="divResult"></div>
 
     <script>
       //按下按鈕 click 取得使用者的體重、身高=>計算出BMI
@@ -34,11 +34,19 @@
       const inpHeight = document.getElementById('inputHeight');
       const btnClick = document.getElementById('buttonClick');
       const divResult = document.getElementById('divResult');
+      
 
       //step2 在甚麼時候
+      //事件類型：click、blur、input...
       btnClick.addEventListener('click',function(){
         //step3 做甚麼事
+        const h = inpHeight.value / 100;
+        const w = inpWeight.value;
+        const BMI = w / (h * h);
         
+        //textContent(innerText)、innerHTML
+        divResult.textContent = `您的 BMI 是 ${BMI}`;
+
       })
       
     </script>
