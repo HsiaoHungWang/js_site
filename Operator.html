@@ -59,7 +59,7 @@
       // console.log(true && ???);  //&&後面的程式碼要被執行，才會知道做後的結果為 true 還是 false
 
       //  const employee = {"name":"Jack","email":"Jack@gmail.com","contact":{"cell":"0911222333","office":"02-11122233"}}
-      //    // const employee = {"name":"Mary","email":"Mary@gmail.com"}
+      // const employee = {"name":"Mary","email":"Mary@gmail.com"}
       //     console.log(employee.name);
       //     console.log(employee.email);
       //    // console.log(employee.contact.cell);   //TypeError: Cannot read properties of undefined (reading 'cell')
@@ -69,8 +69,24 @@
       //false || ???  ||後面的程式碼會被執行
       //true || ??? => true ||後面的程式碼不需要被執行，結果就一定是true
 
-      let name = "Mary";
-      console.log(name || "guest");
+    //   let name = "Mary";
+    //   console.log(name || "guest");
+
+    //三元運算子 ? :
+    // let x = -10;
+    // console.log(x > 0 ? x : 1);
+
+    // let age = 17;
+    // console.log(age >= 18 ? "可以投票" : "再等等");
+
+    // let isLogin = false;
+    // console.log(isLogin ? "登出" : "請先登入");
+
+    //運算子優先順序
+    console.log(3 + 4 -2); //5
+    console.log(25 < 10  + 3 * 4); //25 < 10 + 12 => 25 < 22 => false
+    console.log(6 / 2 * (1 + 2)); // 6 / 2 * 3 => 3 * 3 => 9
+    console.log(25 < (10  + 3) * 4); //25 < 13 * 4 => 25 < 52 => true
     </script>
   </body>
 </html>
