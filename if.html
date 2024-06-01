@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //輸入三個數字
+      const n1 = Number(prompt("請輸入數字1", 0));
+      const n2 = Number(prompt("請輸入數字2", 0));
+      const n3 = Number(prompt("請輸入數字3", 0));
+
+      //比大小
+      let max = 0;
+    //   if (n1 > n2) {
+    //     max = n1;
+    //   } else {
+    //     max = n2;
+    //   }
+    //   if(max < n3){
+    //     max = n3;
+    //   }
+
+     if(n1 > n2 && n1 > n3){
+        max = n1;
+     }else if(n2 > n1 && n2 > n3){
+        max = n2;
+     }else{
+        max = n3;
+     }
+
+
+      //輸出最大值
+      alert(`最大值為 ${max}`);
+    </script>
+  </body>
+</html>
