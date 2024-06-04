@@ -10,4 +10,4 @@ console.log(myDiv);  //null
 myDiv.innerHTML = "<h2>Hello World!!</h2>";
 */
 
-console.log("xyz");
+console.log("xyz\bxyz");

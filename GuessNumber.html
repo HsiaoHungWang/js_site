@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>猜數字遊戲</h2>
+    <script>
+
+        //Math 物件
+       // console.log(Math.floor(Math.random() * 100));
+        const theNumber = Math.floor(Math.random() * 100);
+        
+        while(true){
+             const guess = Number(prompt("請輸入數字(1-100)，輸入0離開遊戲"));
+            // alert(typeof guess)
+             if(guess === 0){
+                alert("下次再來玩");
+                break;     
+             }else if(guess === theNumber){
+                alert(`猜中了數字是 ${guess}`);
+                break;
+             }else if(guess > theNumber){
+                alert(`${guess} 數字太大`)
+             }else{
+                alert(`${guess} 數字太小`)
+             }
+        }
+       
+    </script>
+</body>
+</html>
