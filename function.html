@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+       
+        //function 宣告
+        function sayHi(name, age){
+            //undefined => true or false
+            let message = "Hello World!!"
+            if(name){
+              message = `Hello ${name}!!`;
+            }
+            return message;
+        }
+
+        //function 呼叫
+        let result = sayHi();
+        console.log(result);
+        result = sayHi("Tom");
+        console.log(result);
+    </script>
+</body>
+</html>
