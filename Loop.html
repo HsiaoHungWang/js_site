@@ -44,6 +44,40 @@
         //     }
         //     console.log(text);
         // }
+
+        const balls = ["basketball", "valleyball", "baseball"];
+        //console.log(balls.length); //3
+        // for(let i=0, max=balls.length; i<max; i++){
+        //     console.log(balls[i])
+        // }
+
+        //for...of 不能讀物件的資料
+        // for(let ball of balls){
+        //     console.log(ball);
+        // }
+        // //for...in 讀陣列是取的index
+        // for(let i in balls){
+        //    // console.log(i); //index
+        //    console.log(balls[i]);
+        // }
+
+        //[o:"a",1:"b"]
+        //{key:value,key:value}
+        // const product = {"productId":1,"productName":"iPhone","price":30000,"qty":10};
+        // //讀物件是取的key
+        // for(let key in product){ 
+        //     console.log(key); //productId、productName
+        //     console.log(product[key]); //1, productName
+        // }
+
+            //JSON
+        const products = [
+          { productId: 1, productName: "iPhone1", price: 30000, qty: 10 },
+          { productId: 2, productName: "iPhone2", price: 28000, qty: 6 },
+          { productId: 3, productName: "iPhone3", price: 21000, qty: 8 },
+        ];
+        //products[0] =>  { productId: 1, productName: "iPhone1", price: 30000, qty: 10 }
+        //products[0].productId =>1
     </script>
 </body>
 </html>
