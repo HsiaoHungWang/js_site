@@ -20,11 +20,38 @@
             return message;
         }
 
+        function temperatureConvert(degree,type){
+           let degreeChange = 0;
+           if(type === "C"){//C or F
+             //C => F
+             //華氏(℉)=攝氏 ∗ (9/5)+32
+             degreeChange = degree * (9/5) + 32;
+           }else{
+            //F => C
+            //攝氏(℃)=(華氏−32)∗ (5/9)
+            degreeChange = (degree - 32) * (5/9);
+           }
+
+           return degreeChange;
+        }
+
+
+
         //function 呼叫
         let result = sayHi();
         console.log(result);
         result = sayHi("Tom");
         console.log(result);
+
+        let degree = temperatureConvert(30,"C");
+        console.log(`F:${degree}`);
+        degree = temperatureConvert(86,"F");
+        console.log(`C:${degree}`);
+        if(degree > 28){
+            alert("開冷氣");
+        }else{
+            alert("開電風扇");
+        }
     </script>
 </body>
 </html>
