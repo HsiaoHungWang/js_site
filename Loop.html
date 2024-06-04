@@ -30,21 +30,9 @@
             <th>商品數量</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-            <td>1</td>
-            <td>aaaa</td>
-            <td>10000</td>
-            <td>100</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>bbbb</td>
-            <td>500</td>
-            <td>10</td>
-        </tr>
+      <tbody id="tb1">
+       
       </tbody>
-
     </table>
     <script>
     //    let total = 0;
@@ -109,6 +97,7 @@
         //     console.log(product[key]); //1, productName
         // }
 
+        const myTb = document.getElementById('tb1');
             //JSON
         const products = [
           { productId: 1, productName: "iPhone1", price: 30000, qty: 10 },
@@ -117,6 +106,36 @@
         ];
         //products[0] =>  { productId: 1, productName: "iPhone1", price: 30000, qty: 10 }
         //products[0].productId =>1
+        
+        let htmlResult = "";
+        for(let product of products){
+            //方法一
+            // console.log(product); // { productId: 1, productName: "iPhone1", price: 30000, qty: 10 }
+            // console.log(product.productId);
+            // console.log(product.productName);
+            //方法二
+            // for(let key in product){
+            //     console.log(product[key]);
+            // }
+            //方法三
+            let {productId, productName, price, qty} = product;
+            // console.log(productId)
+            // console.log(productName)
+            // console.log(price)
+            // console.log(qty)
+            
+            htmlResult += `
+                <tr>
+                    <td>${productId}</td>
+                    <td>${productName}</td>
+                    <td>${price}</td>
+                    <td>${qty}</td>
+                </tr>
+            `;
+        }
+
+        //htmlResult內容顯示到網頁上
+        myTb.innerHTML = htmlResult;
     </script>
 </body>
 </html>
