@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+         //function 宣告式
+    //     function sayHi(name, age=30){
+    //         console.log(name); //undefined
+    //         console.log(age); //Jack
+    //         //undefined => true or false
+    //         let message = "Hello World!!"
+    //         if(name){
+    //           message = `Hello ${name}!!`;
+    //         }
+    //         return message;
+    //     }
+    // //    sayHi();
+    //  sayHi("Jack");
+    // sayHi("Jack",28);
+    // //    sayHi("Jack","wu");
+
+    //... 其餘運算子
+    function getSum(a,b,...datas){
+    // console.log(arguments);
+    console.log(datas); //[1,2]
+    }
+
+    getSum(1,2);
+    getSum(1,2,3);
+    getSum(1,2,3,4);
+    </script>
+</body>
+</html>

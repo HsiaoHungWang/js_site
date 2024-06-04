@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+// var 變數可以重複設定，let 不行
+// var 有變數提升(hoisting)的效果，let 沒有
+// 有效範圍不同
+// var 是函式作用域(function scope)
+// let 是區塊作用域(block scope)
+
+let a = "abc";
+
+function sayHi(){
+   console.log(a);
+   var b = "bbbb";
+   let c = "ccc";
+   if(true){
+    var d = "dddd";
+    let e = "eee";
+     console.log(a);
+     console.log(b);
+     console.log(c);
+   }
+   console.log(d);
+   console.log(e);
+}
+function say(){
+   console.log(a);
+  
+   if(true){
+     console.log(a);
+   }
+}
+
+sayHi();
+//say();
+
+
+
+    </script>
+</body>
+</html>
