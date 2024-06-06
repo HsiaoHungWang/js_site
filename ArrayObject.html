@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const arr = ["a","b","c","d"];
+        //for(let i=0...)
+        //for(let item of arr)
+        // arr.forEach(function(item){
+        //     console.log(item); //a、b、c、d   
+        // })
+     // arr.forEach(item => console.log(item)); //a、b、c、d    
+
+    //  const evenDatas = arr.filter((item,index)=>{
+    //    return(
+    //      index % 2 === 0
+    //    )
+    //  });
+    const evenDatas = arr.filter((item,index)=>index % 2 !== 0);
+     console.log(evenDatas);
+
+
+   
+    </script>
+</body>
+</html>
