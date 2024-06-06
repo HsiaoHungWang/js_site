@@ -21,31 +21,42 @@
         // let str = "JavaScript";
         // console.log(str.length);
 
-        const theMail = "user@comp@any.com";
+//         const theMail = "user@comp@any.com";
 
-        //email 格式是否正確
-        //檢查有沒有 @、.
-// console.log(theMail.lastIndexOf("@"));
-// console.log(theMail.indexOf("@"));
-        const checkMail = mail => {
-           let isValid = true;
-           //回傳@的索引值 4，找不到回傳-1
-           if(mail.indexOf("@") === -1 || mail.indexOf(".") === -1 || mail.indexOf("@") !== mail.lastIndexOf("@")){
-             isValid = false;
-           } 
+//         //email 格式是否正確
+//         //檢查有沒有 @、.
+// // console.log(theMail.lastIndexOf("@"));
+// // console.log(theMail.indexOf("@"));
+//         const checkMail = mail => {
+//            let isValid = true;
+//            //回傳@的索引值 4，找不到回傳-1
+//            if(mail.indexOf("@") === -1 || mail.indexOf(".") === -1 || mail.indexOf("@") !== mail.lastIndexOf("@")){
+//              isValid = false;
+//            } 
 
-           return isValid;
-        }
+//            return isValid;
+//         }
 
-        if(checkMail(theMail)){
-            console.log('email格式正確');
-        }else{
-            console.log('email格式不正確');
-        }
+//         if(checkMail(theMail)){
+//             console.log('email格式正確');
+//         }else{
+//             console.log('email格式不正確');
+//         }
 
-        const fileName = "logo png jpeg";
-        const fileNames = fileName.split(" ");
-        console.log(fileNames);
+//         const fileName = "logo png jpeg";
+//         const fileNames = fileName.split(" ");
+//         console.log(fileNames);
+
+//日期物件
+const today = new Date();
+const today1 = new Date("2000-1-1");
+console.log(today.getDay());  //4 -> 四
+const DAYS = ["日","一","二","三","四","五","六"];
+console.log(DAYS[today.getDay()]);
+
+//輸入你的生入，算出你幾歲？
+// console.log(today.getTime());
+// console.log(today1.getTime());
 
 
     </script>
