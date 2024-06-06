@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const strUrl = "https://www.ispan.com.tw/search?q=Python工程師&key2=!@#$%";
+        console.log(encodeURI(strUrl));
+        console.log(encodeURIComponent(strUrl));
+        console.log(decodeURIComponent("www.ispan.com.tw%2Fsearch%3Fq%3DPython%E5%B7%A5%E7%A8%8B%E5%B8%AB%26key2%3D!%40%23%24%25"));
+    </script>
+</body>
+</html>
