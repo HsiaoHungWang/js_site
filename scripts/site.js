@@ -57,15 +57,24 @@ myDiv.innerHTML = "<h2>Hello World!!</h2>";
 const minNumber = (num1, num2) => num1 > num2 ? num2 : num1;
 
 
-const BCount = str => {
-  let count = 0;
-  for(let c of str){
-    if( c === "B"){
-      count++;
-    }
-  }
-  return count;
-}
+// const BCount = str => {
+//   let count = 0;
+//   for(let c of str){
+//     if( c === "B"){
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// const BCount = str => {
+//   const re = new RegExp("B","g");
+//   return str.match(re).length  
+// }
+
+const BCount = str => str.match(/B/g).length;
+
+  
 
 const charCount = (str, c) => {
     let count = 0;
