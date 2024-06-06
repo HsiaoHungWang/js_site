@@ -8,9 +8,46 @@
 <body>
     <script>
         const strUrl = "https://www.ispan.com.tw/search?q=Python工程師&key2=!@#$%";
-        console.log(encodeURI(strUrl));
-        console.log(encodeURIComponent(strUrl));
-        console.log(decodeURIComponent("www.ispan.com.tw%2Fsearch%3Fq%3DPython%E5%B7%A5%E7%A8%8B%E5%B8%AB%26key2%3D!%40%23%24%25"));
+        // console.log(encodeURI(strUrl));
+        // console.log(encodeURIComponent(strUrl));
+        // console.log(decodeURIComponent("www.ispan.com.tw%2Fsearch%3Fq%3DPython%E5%B7%A5%E7%A8%8B%E5%B8%AB%26key2%3D!%40%23%24%25"));
+
+        //isNaN is not a number 不是數值 => true ，是數值 => false
+        // console.log(isNaN("abcd"));  //true
+        // console.log(isNaN("1234"));  //false
+
+        //字串物件
+        //let str = new String("JavaScript");
+        // let str = "JavaScript";
+        // console.log(str.length);
+
+        const theMail = "user@comp@any.com";
+
+        //email 格式是否正確
+        //檢查有沒有 @、.
+// console.log(theMail.lastIndexOf("@"));
+// console.log(theMail.indexOf("@"));
+        const checkMail = mail => {
+           let isValid = true;
+           //回傳@的索引值 4，找不到回傳-1
+           if(mail.indexOf("@") === -1 || mail.indexOf(".") === -1 || mail.indexOf("@") !== mail.lastIndexOf("@")){
+             isValid = false;
+           } 
+
+           return isValid;
+        }
+
+        if(checkMail(theMail)){
+            console.log('email格式正確');
+        }else{
+            console.log('email格式不正確');
+        }
+
+        const fileName = "logo png jpeg";
+        const fileNames = fileName.split(" ");
+        console.log(fileNames);
+
+
     </script>
 </body>
 </html>
