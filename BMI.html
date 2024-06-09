@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html lang="zh-hant-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      div {
-        margin: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <!--
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    div {
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--
         1. 做出HTML的網頁
         2. 樣式美化網頁
     -->
-    <div>
-      <label>體重：<input type="text"  id="inputWeight" placeholder="請輸入體重(公斤)" /></label>
-    </div>
-    <div>
-      <label>身高：<input type="text" id="inputHeight" placeholder="請輸入身高(公分)" /></label>
-    </div>
-    <div>
-      <button id="buttonClick">計算BMI</button>
-    </div>
-    <div id="divResult"></div>
+  <div>
+    <label>體重：<input type="text" id="inputWeight" placeholder="請輸入體重(公斤)" /></label>
+  </div>
+  <div>
+    <label>身高：<input type="text" id="inputHeight" placeholder="請輸入身高(公分)" /></label>
+  </div>
+  <div>
+    <button id="buttonClick">計算BMI</button>
+  </div>
+  <div id="divResult"></div>
 
-    <script>
-      //按下按鈕 click 取得使用者的體重、身高=>計算出BMI
+  <script>
+    //按下按鈕 click 取得使用者的體重、身高=>計算出BMI
 
-      //step1 找到要控制的對象
-      const inpWeight = document.getElementById('inputWeight');
-      const inpHeight = document.getElementById('inputHeight');
-      const btnClick = document.getElementById('buttonClick');
-      const divResult = document.getElementById('divResult');
-      
+    //step1 找到要控制的對象
+    const inpWeight = document.getElementById('inputWeight');
+    const inpHeight = document.getElementById('inputHeight');
+    const btnClick = document.getElementById('buttonClick');
+    const divResult = document.getElementById('divResult');
 
-      //step2 在甚麼時候
-      //事件類型：click、blur、input...
-      btnClick.addEventListener('click',function(){
-        //step3 做甚麼事
-        const h = inpHeight.value / 100;       
-        const w = inpWeight.value;
-        //const BMI = w / (h * h);
-        const BMI = w / (h ** 2);
 
-        let message = "";
-        if(BMI < 18.5){
-          message = "過輕";
-        }else if(BMI >= 18.5 && BMI < 24){          
-          message = "正常";
-        }else if(BMI >= 24 && BMI < 27){          
-          message = "過重";
-        }else if(BMI >= 27 && BMI < 30){          
-          message = "輕度肥胖";
-        }else if(BMI >= 30 && BMI < 35){          
-          message = "中度肥胖";
-        }else{
-          message = "重度肥胖"
-        }
-        //textContent(innerText)、innerHTML
-        divResult.textContent = `您的 BMI 是 ${BMI}，${message}`;
+    //step2 在甚麼時候
+    //事件類型：click、blur、input...
+    btnClick.addEventListener('click', function () {
+      //step3 做甚麼事
+      const h = inpHeight.value / 100;
+      const w = inpWeight.value;
+      //const BMI = w / (h * h);
+      const BMI = w / (h ** 2);
 
-      })
+      let message = "";
+      if (BMI < 18.5) {
+        message = "過輕";
+      } else if (BMI >= 18.5 && BMI < 24) {
+        message = "正常";
+      } else if (BMI >= 24 && BMI < 27) {
+        message = "過重";
+      } else if (BMI >= 27 && BMI < 30) {
+        message = "輕度肥胖";
+      } else if (BMI >= 30 && BMI < 35) {
+        message = "中度肥胖";
+      } else {
+        message = "重度肥胖"
+      }
+      //textContent(innerText)、innerHTML
+      divResult.textContent = `您的 BMI 是 ${BMI.toFixed(2)}，${message}`;
 
-   
-      
-    </script>
-  </body>
+    })
+
+
+
+  </script>
+</body>
+
 </html>
