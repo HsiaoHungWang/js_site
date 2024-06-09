@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSON demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-9">
+                <div class="row g-3">
+                    <input type="hidden" id="inputIndex">
+                    <div class="col-sm"> <input type="text" class="form-control" id="inputName" placeholder="請輸入姓名">
+                    </div>
+                    <div class="col-sm"> <input type="text" class="form-control" id="inputEmail" placeholder="請輸入電子郵件">
+                    </div>
+                    <div class="col-sm"> <input type="text" class="form-control" id="inputAge" placeholder="請輸入年紀">
+                    </div>
+                    <div class="col-sm"> <button id="buttonAdd" class="btn btn-primary">新增</button>
+                        <button id="buttonAge" class="btn btn-success">年紀篩選 &lt;30 </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-3"><input type="search" class="form-control" id="inputSearch" placeholder="關鍵字搜尋" /></div>
+
+
+
+        </div>
+
+        <table id="table1" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>電子郵件</th>
+                    <th>年紀</th>
+                    <th>編輯</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>Tom</td>
+                    <td>Tom@company.com</td>
+                    <td>35</td>
+                    <td>
+                        <button class="btn btn-danger mx-1">刪除</button>
+                        <button class="btn btn-secondary mx-1">編輯</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Jack</td>
+                    <td>Jack@gmail.com</td>
+                    <td>28</td>
+                    <td> <button class="btn btn-danger mx-1">刪除</button>
+                        <button class="btn btn-secondary mx-1">編輯</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Mary</td>
+                    <td>Mary@ispan.com.tw</td>
+                    <td>37</td>
+                    <td> <button class="btn btn-danger mx-1">刪除</button>
+                        <button class="btn btn-secondary mx-1">編輯</button>
+                    </td>
+                </tr>
+            </tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
