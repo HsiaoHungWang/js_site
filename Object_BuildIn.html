@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <script src="scripts/site.js"></script>
     <script>
         const strUrl = "https://www.ispan.com.tw/search?q=Python工程師&key2=!@#$%";
         // console.log(encodeURI(strUrl));
@@ -66,7 +67,8 @@
         //輸入你的生入，算出你幾歲？
         // console.log(today.getTime());
         // console.log(today1.getTime());
-
+        let age = ageCalc('2000/1/1');
+        console.log(age);
 
         //正規表達式 RegExp
         // const re = new RegExp("a","gi");
