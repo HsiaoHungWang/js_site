@@ -54,7 +54,7 @@ myDiv.innerHTML = "<h2>Hello World!!</h2>";
 // }
 
 //箭頭函式
-const minNumber = (num1, num2) => num1 > num2 ? num2 : num1;
+export const minNumber = (num1, num2) => num1 > num2 ? num2 : num1;
 
 
 // const BCount = str => {
@@ -72,11 +72,11 @@ const minNumber = (num1, num2) => num1 > num2 ? num2 : num1;
 //   return str.match(re).length  
 // }
 
-const BCount = str => str.match(/B/g).length;
+export const BCount = str => str.match(/B/g).length;
 
 
 
-const charCount = (str, c) => {
+export const charCount = (str, c) => {
   let count = 0;
   for (let _c of str) {
     if (_c === c) {
@@ -88,7 +88,7 @@ const charCount = (str, c) => {
 
 
 //計算年紀
-const ageCalc = birthday => {
+export  const ageCalc = birthday => {
   let birth = new Date(birthday);
   let today = new Date();
 
