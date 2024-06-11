@@ -29,8 +29,6 @@
             </div>
             <div class="col-3"><input type="search" class="form-control" id="inputSearch" placeholder="關鍵字搜尋" /></div>
 
-
-
         </div>
 
         <table id="table1" class="table table-bordered">
@@ -43,34 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-
-                <tr>
-                    <td>Tom</td>
-                    <td>Tom@company.com</td>
-                    <td>35</td>
-                    <td>
-                        <button class="btn btn-danger mx-1">刪除</button>
-                        <button class="btn btn-secondary mx-1">編輯</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Jack</td>
-                    <td>Jack@gmail.com</td>
-                    <td>28</td>
-                    <td> <button class="btn btn-danger mx-1">刪除</button>
-                        <button class="btn btn-secondary mx-1">編輯</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Mary</td>
-                    <td>Mary@ispan.com.tw</td>
-                    <td>37</td>
-                    <td> <button class="btn btn-danger mx-1">刪除</button>
-                        <button class="btn btn-secondary mx-1">編輯</button>
-                    </td>
-                </tr>
+               
             </tbody>
             </tbody>
         </table>
@@ -78,6 +49,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script>
+       // document.getElementById("table1")
+       //document.querySelector("css selectors")
+        const tb = document.querySelector('#table1>tbody')
+       // console.log(tb);
+        const employees = [{"name":"Tom","email":"Tom@company.com","age":34},
+                     {"name":"Jack","email":"Jack@gmail.com","age":29},
+                     {"name":"Mary","email":"Mary@ispan.com.tw","age":37}];
+        // console.log(employees.length);
+        // const strEmployees = JSON.stringify(employees);
+        // console.log(strEmployees.length);
+
+        const loadDatas = datas => {
+           const empWithTrs = datas.map(employee => {
+                //解構賦值
+                const {name, email, age} = employee
+               
+                 return(
+                    `
+                    <tr>
+                    <td>${name}</td>
+                    <td>${email}</td>
+                    <td>${age}</td>
+                    <td> <button class="btn btn-danger mx-1">刪除</button>
+                        <button class="btn btn-secondary mx-1">編輯</button>
+                    </td>
+                </tr>
+                    `
+                 );
+              })
+             //array > string
+             tb.innerHTML = empWithTrs.join("");
+      
+            };
+
+        loadDatas(employees);
+
+    </script>
 </body>
 
 </html>
