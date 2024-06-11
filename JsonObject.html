@@ -21,7 +21,8 @@
                     </div>
                     <div class="col-sm"> <input type="text" class="form-control" id="inputAge" placeholder="請輸入年紀">
                     </div>
-                    <div class="col-sm"> <button id="buttonAdd" class="btn btn-primary">新增</button>
+                    <div class="col-sm"> 
+                        <button id="buttonAdd" class="btn btn-primary">新增</button>
                         <button id="buttonAge" class="btn btn-success">年紀篩選 &lt;30 </button>
                     </div>
 
@@ -53,7 +54,14 @@
     <script>
        // document.getElementById("table1")
        //document.querySelector("css selectors")
-        const tb = document.querySelector('#table1>tbody')
+        const tb = document.querySelector('#table1>tbody');
+        const btnAdd = document.querySelector('#buttonAdd');
+        const inpName = document.querySelector('#inputName');
+        const inpEmail = document.querySelector('#inputEmail');
+        const inpAge = document.querySelector('#inputAge');
+        const inpIndex = document.querySelector('#inputIndex');
+
+
        // console.log(tb);
         const employees = [{"name":"Tom","email":"Tom@company.com","age":34},
                      {"name":"Jack","email":"Jack@gmail.com","age":29},
@@ -62,19 +70,69 @@
         // const strEmployees = JSON.stringify(employees);
         // console.log(strEmployees.length);
 
+        //新增或修改資料到JSON中
+        btnAdd.addEventListener('click',()=>{
+            const idx = inpIndex.value;
+          //使用者輸入的資料讀出來放進emp的物件中
+          const emp ={"name":inpName.value,"email":inpEmail.value,"age":inpAge.value};
+         
+          if(/^\d+$/.test(idx)){
+            //修改資料splice(從什為位置,刪除幾筆資料,放進的資料)
+            employees.splice(idx,1,emp);
+          }else{
+            //新增
+            //把emp物件塞進了JSON物件中
+            employees.push(emp);
+          }
+          
+         
+          
+          //重新更新網頁上的內容
+          loadDatas(employees);
+
+          //清除使用者輸入的資料
+          clearData();
+        })
+ 
+        //刪除JSON中的資料
+        const delEmp = (emp1)=>{
+          // console.log(emp);
+          //根據電子郵件找到要刪除資料的Index          
+          const idx = employees.findIndex(emp2=>emp2.email === emp1.email);
+
+          //刪除資料splice(從什為位置,刪除幾筆資料)
+          employees.splice(idx,1);
+          loadDatas(employees);
+        }
+
+        //編輯資料
+       const editEmp = (emp1)=>{
+        const {name, email, age} = emp1;
+         //根據電子郵件找到要刪除資料的Index          
+         const idx = employees.findIndex(emp2=>emp2.email === emp1.email);
+
+        inpName.value = name;
+        inpEmail.value = email;
+        inpAge.value = age;
+        inpIndex.value = idx;
+        btnAdd.textContent="修改";
+       }
+
+        //將傳入的JSON資料顯示到表格中
         const loadDatas = datas => {
            const empWithTrs = datas.map(employee => {
                 //解構賦值
-                const {name, email, age} = employee
-               
+                const {name, email, age} = employee;
+                const strEmp = JSON.stringify(employee);
                  return(
                     `
                     <tr>
                     <td>${name}</td>
                     <td>${email}</td>
                     <td>${age}</td>
-                    <td> <button class="btn btn-danger mx-1">刪除</button>
-                        <button class="btn btn-secondary mx-1">編輯</button>
+                    <td> 
+                        <button class="btn btn-danger mx-1" onclick='delEmp(${strEmp})'>刪除</button>
+                        <button class="btn btn-secondary mx-1" onclick='editEmp(${strEmp})'>編輯</button>
                     </td>
                 </tr>
                     `
@@ -86,6 +144,21 @@
             };
 
         loadDatas(employees);
+
+        //清除使用者輸入的資料
+        const clearData = ()=>{
+            // inpName.value = "";
+            // inpEmail.value = "";
+            // inpAge.value = "";
+
+          const inputs = document.querySelectorAll('input');
+          inputs.forEach(inp=>inp.value="");
+        //   inputs.forEach(function(inp){
+        //     inp.value = "";
+        //   });
+        btnAdd.textContent="新增";
+
+        }
 
     </script>
 </body>
