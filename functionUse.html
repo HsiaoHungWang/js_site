@@ -8,8 +8,10 @@
 <body>
     
 
-    <script src="scripts/site.js"></script>
-    <script>
+    <!-- <script src="scripts/site.js"></script> -->
+    <script type="module">
+        import { BCount, ageCalc, minNumber } from './scripts/site.js';
+
     //    const theMin = minNumber(12,13);
     //    console.log(theMin);
 
@@ -17,6 +19,9 @@
        console.log(b_count);
     //    const c_count  =  charCount("aBcBccc","c");
     //    console.log(c_count);
+
+    const theAge = ageCalc("2000/1/1");
+    console.log(theAge);
     </script>
 </body>
 </html>

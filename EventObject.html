@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #myCanvas{
+        border:1px solid green;
+    }
+    </style>
+   
+</head>
+<body>
+    <input type="text" id="text1"><br />
+    <canvas id="myCanvas" width="400px" height="300px"></canvas>
+
+    <script>
+        const t1 = document.querySelector('#text1');
+        const canvas = document.querySelector('#myCanvas');
+        const context = canvas.getContext('2d');
+
+        //畫線
+        context.strokeStyle = "blue";
+        context.lineWidth = 10;
+        // context.beginPath();
+        // context.moveTo(200,100);
+        // context.lineTo(200,200);
+        // context.lineTo(300,200);
+        // context.closePath();
+        // context.stroke();
+
+        let flag = false;
+        canvas.addEventListener('mousedown', event => {
+            flag = true;
+            context.beginPath();
+            context.moveTo(event.offsetX, event.offsetY);
+        })
+        canvas.addEventListener('mousemove', event => {
+            if(flag){
+                context.lineTo(event.offsetX, event.offsetY);
+                context.stroke();
+            }
+          
+        })
+        canvas.addEventListener('mouseup', event => {
+            flag = false
+           // console.log(event);
+        })
+
+        t1.addEventListener('keypress', event => {
+            //事件物件就是事件處理程序的第一個參數 event
+           console.log(event);
+           //取得使用者輸入字元 => ASCII
+           //a-z 97-122
+           //A-z 65-90
+           //0-9 48-57
+           console.log(event.which); //keyCode、charCode
+        })
+
+
+        
+    </script>
+</body>
+</html>
