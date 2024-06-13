@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="myH">Hello World!!</h2>
+
+    <script>
+     const theH = document.querySelector('#myH');
+     //theH.textContent = "<u>uuuuuu</u>";
+     //theH.innerHTML = "<u>uuuuuu</u>";
+     
+    //  theH.outerHTML = "<u>uuuuuu</u>";
+    //  theH.outerText = "abcd";
+
+    theH.insertAdjacentHTML('afterbegin',"aaaaaa");
+    theH.insertAdjacentHTML('beforeend',"bbbbbb");
+    theH.insertAdjacentHTML('beforebegin',"xxxxx");
+    theH.insertAdjacentHTML('afterend',"zzzzzz");
+
+    </script>
+</body>
+</html>
