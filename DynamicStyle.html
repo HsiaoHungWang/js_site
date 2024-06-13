@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s1{
+            color:blue;
+            text-decoration: underline;            
+        }
+        .s2{
+            color:green;
+            text-decoration: none;            
+        }
+        .s3{
+            border:1px solid green;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="myH" class="s1 s3">JavaScript Style Change</h2>
+
+    <script>
+        const theH = document.querySelector('#myH');
+        theH.addEventListener('mouseover',()=>{
+            // theH.style.color = "green";
+            // theH.style.textDecoration = "none";
+            theH.classList.remove('s1');
+            theH.classList.add('s2');
+        })
+        theH.addEventListener('mouseout',()=>{
+            // theH.style.color = "blue";
+            // theH.style.textDecoration = "underline";
+            theH.classList.remove('s2');
+            theH.classList.add('s1');
+        })
+        theH.addEventListener('click',()=>{
+            //如果有s3就移除它，沒有s3就加入它
+            // if(theH.classList.contains('s3')){
+            //     theH.classList.remove('s3');
+            // }else{
+            //     theH.classList.add('s3');
+            // }
+            theH.classList.toggle('s3');
+        })
+    </script>
+</body>
+</html>
