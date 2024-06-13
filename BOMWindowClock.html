@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">00:00:00</div>
+
+    <script>
+        const divClock = document.querySelector('#div1');
+        //每隔一秒執行匿名函式
+        window.setInterval(()=>{
+           const today = new Date();
+           const hour = today.getHours();
+           const min = today.getMinutes();
+           const sec = today.getSeconds();
+           divClock.textContent = `${hour} : ${min} : ${sec}`;
+
+        },1000);
+    </script>
+</body>
+</html>
