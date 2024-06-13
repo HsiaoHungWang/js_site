@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm" action="first.py">
+        <div>
+            <input type="text" name="userName"  required>            
+        </div>
+        <div>
+            <input type="tel" name="phone" pattern="09\d{2}-\d{3}-\d{3}" required>            
+        </div>
+        <div>
+            <button type="submit">送出</button>
+        </div>
+
+    </form>
+
+    <script>
+      //console.log(window.document.myForm.userName.value);
+    </script>
+</body>
+</html>
