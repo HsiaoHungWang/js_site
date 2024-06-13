@@ -12,13 +12,32 @@
    
 </head>
 <body>
-    <input type="text" id="text1"><br />
+    <form action="first.py">
+        <input type="text" id="text1" name="userName"><br />
+        <button type="submit" id="buttonSubmit">submit</button> <button type="reset">reset</button>
+    </form>
+ <a href="https://www.ispan.com.tw" id="link1">ispan</a><br>
     <canvas id="myCanvas" width="400px" height="300px"></canvas>
 
     <script>
         const t1 = document.querySelector('#text1');
         const canvas = document.querySelector('#myCanvas');
         const context = canvas.getContext('2d');
+        const btnSubmit = document.querySelector('#buttonSubmit');
+        const iSpanLink = document.querySelector('#link1');
+       
+        //console.log(confirm("真的要去嗎?"));
+        btnSubmit.addEventListener('click',event=>{
+            event.preventDefault();
+        })
+        iSpanLink.addEventListener('click',event=>{
+            if(!confirm("真的要去嗎?")){           
+               event.preventDefault();
+            }
+            
+          
+        })
+
 
         //畫線
         context.strokeStyle = "blue";
@@ -48,14 +67,26 @@
            // console.log(event);
         })
 
-        t1.addEventListener('keypress', event => {
+        t1.addEventListener('keydown', event => {
             //事件物件就是事件處理程序的第一個參數 event
            console.log(event);
+           //keypress
            //取得使用者輸入字元 => ASCII
            //a-z 97-122
            //A-z 65-90
            //0-9 48-57
+           //keydown
+           //a-zA-Z 65-90
+           //tab(9)、backspace(8)、enter(13)
+           
+           console.log(event.target); //觸發事件的對象(物件)
+ 
            console.log(event.which); //keyCode、charCode
+           console.log(event.target)
+           if(event.which === 13){
+              console.log(t1.value);
+              console.log(event.target.value);
+           }
         })
 
 
