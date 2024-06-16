@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul1"></ul>
+
+
+    <script>
+       const theUl = document.querySelector('#ul1');
+        const datas = ["aaaa","bbbb","cccc"];
+        //建議的寫法
+        // const lis = datas.map(data=>`<li>${data}</li>`);
+        // theUl.innerHTML = lis.join("");
+
+        //DOM
+        //建立元素節點
+        //建立文字節點
+        //文字節點加到元素節點中
+        const docFrag = document.createDocumentFragment(); //建立一個空的容器
+        datas.forEach(data=>{          
+            const eleLi = document.createElement("li"); //<li>
+            const txtLi = document.createTextNode(data); //aaaa
+            //<li>aaaa</li>
+            eleLi.appendChild(txtLi);           
+            docFrag.appendChild(eleLi);
+        })
+        theUl.appendChild(docFrag);
+
+        const eleA = document.createElement("a");
+        eleA.setAttribute('href','https://www.ispan.com.tw');
+        const txtA = document.createTextNode("iSpan");
+        eleA.appendChild(txtA);
+
+        const eleLi = document.createElement("li");
+            eleLi.appendChild(eleA); //<li><a>iSpan</a>
+                theUl.appendChild(eleLi);
+
+
+
+    </script>
+</body>
+</html>
