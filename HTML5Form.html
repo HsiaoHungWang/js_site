@@ -6,21 +6,70 @@
     <title>Document</title>
 </head>
 <body>
-    <form name="myForm" action="first.py">
+    <form name="myForm" action="first.py" method="get">
         <div>
             <input type="text" name="userName"  required>            
+        </div>
+        <div>
+            <input type="password" name="password1" placeholder="請輸入密碼"  required>            
+        </div>
+        <div>
+            <input type="password" name="password2" placeholder="密碼確認"  required>            
         </div>
         <div>
             <input type="tel" name="phone" pattern="09\d{2}-\d{3}-\d{3}" required>            
         </div>
         <div>
-            <button type="submit">送出</button>
+            <button id="buttonSubmit" type="submit">送出</button>
         </div>
 
     </form>
 
     <script>
       //console.log(window.document.myForm.userName.value);
+      const btnSubmit = document.querySelector('#buttonSubmit');
+      const inpName = document.querySelector('input[name="userName"]');
+      const pwd1 = document.querySelector('input[name="password1"]');
+      const pwd2 = document.querySelector('input[name="password2"]');
+     // console.log(this);
+
+     inpName.addEventListener('blur', event => {
+       // console.log(inpName.value);
+        if(event.target.validity.valueMissing){
+            event.target.setCustomValidity("姓名一定要輸入");
+        }else{
+            event.target.setCustomValidity("");
+        }
+        //console.log(this.value);
+       // console.log(this);  //Window
+      })
+
+      pwd2.addEventListener('blur', event => {
+          if(pwd1.value !== pwd2.value){
+            event.target.setCustomValidity("密碼不一致");
+          }else{
+            event.target.setCustomValidity("");
+          }
+      })
+
+
+    //   inpName.addEventListener('blur',function(event){
+    //     // console.log(inpName.value);
+    //     // console.log(event.target.value);
+    //     // console.log(this.value);
+    //     console.log(this);  //inpName
+    //   })
+
+
+    //  console.log(inpName.value);
+    //   btnSubmit.addEventListener('click', event=>{
+    //     event.preventDefault(); //停止submit行為
+    //     // if(inpName.value !== ""){
+    //     //     window.document.myForm.submit();
+    //     // }
+    //     //確定資料沒問題才要送出
+    //   })
+
     </script>
 </body>
 </html>
