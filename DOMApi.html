@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+</head>
+<body>
+    <h2 id="myH">Document Object Model</h2>
+    <ul id="ul1"><li>aaaaa</li><li>bbbbb</li><li>ccccc</li></ul>
+    <table>
+        <tr>
+            <td>ABC</td>
+            <td>DEF</td>
+            <td>XYZ</td>
+            <td><button id="button1">click</button></td>
+        </tr>
+    </table>
+    <script>
+
+        const btnClick = document.querySelector('#button1');
+
+        btnClick.addEventListener('click',event=>{
+
+            console.log(event.target);
+        })
+
+//    const lis = document.getElementsByTagName('li');
+//    console.log(lis[0].firstChild.nodeValue);
+   
+//    const hs = document.getElementsByTagName('h2');
+//    console.log(hs[0].firstChild.nodeValue);
+
+// const lis = document.querySelectorAll('li');
+// console.log(lis[2].firstChild.nodeValue);
+
+// const theLi = document.querySelector('#ul1>li:nth-child(2)');
+// console.log(theLi.firstChild.nodeValue);   //aaaaa
+// console.log(theLi.previousSibling.firstChild.nodeValue); //bbbbb
+// console.log(theLi.nextSibling.firstChild.nodeValue); //ccccc
+
+
+        //load 事件表示網頁載入完成 => DOM Tree 一定產生了
+  //  window.addEventListener('load',()=>{
+  //DOMContentLoaded => DOM Tree 產生
+  //document.addEventListener('DOMContentLoaded',()=>{
+
+    //   console.log(document.nodeType);  //9 文件節點
+    //    console.log(document.nodeName); //#document
+    //    console.log(document.nodeValue); //null，文字節點(3)才有nodeValue
+
+    //    const theH =  document.querySelector('#myH');
+    //    console.log(theH.nodeType);  //1 元素節點
+    //    console.log(theH.nodeName); //H2 元素的名稱
+    //    console.log(theH.nodeValue); //null，文字節點(3)才有nodeValue
+
+    //    console.log(theH.firstChild.nodeType);  //3 文字節點
+    //    console.log(theH.firstChild.nodeName);  //#text 
+    //    console.log(theH.firstChild.nodeValue);  //Document Object Model
+    //    console.log(theH.textContent); //Document Object Model
+     //  console.log(theH.lastChild.nodeType);  //3 文字節點
+     //  console.log(theH.childNodes[0].nodeType);  //3 文字節點
+
+
+
+
+
+   // })
+       
+    </script>
+</body>
+</html>
